@@ -13,6 +13,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.JComponent;
 
 public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 	private Map<String,JButton> map;
@@ -91,6 +92,7 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 			keyboard.controlColleague(isStart, Color.WHITE);
 			examText.controlColleague(isStart, Color.WHITE);
 			enterText.controlColleague(isStart,Color.WHITE);
+			enterText.requestFocusInWindow();
 		}else {
 			startButton.controlColleague(!isStart, Color.WHITE);
 			stopButton.controlColleague(isStart, Color.LIGHT_GRAY);
@@ -102,23 +104,9 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 	
 	public void keyTyped(KeyEvent e) {}
 	public void keyPressed(KeyEvent e) {
-//		if(isPress) {
-//			isOverlapped=true;
-//		}
-//		isPress=true;
 	}
 	public void keyReleased(KeyEvent e) {
-//		isPress=false;
-//		String enter = enterText.getText();
-//		String exam = examText.getText();
-//		
-//		if(isOverlapped) {
-//			if(index != 0)
-//				enterText.setText(enter.substring(0,index+1));
-//			if(index == 0)
-//				enterText.setText("");
-//			isOverlapped=false;
-//		}
+
 		String enter = enterText.getText();
 		String exam = examText.getText();
 		if(e.getKeyCode() != e.VK_SHIFT) {
