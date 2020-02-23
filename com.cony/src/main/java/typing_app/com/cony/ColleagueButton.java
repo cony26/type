@@ -3,7 +3,7 @@ import java.awt.Color;
 
 import javax.swing.JButton;
 
-public class ColleagueButton extends JButton implements Colleague{
+public class ColleagueButton extends JButton implements Colleague,Product{
 	Mediator mediator;
 	
 	public ColleagueButton(String title) {
