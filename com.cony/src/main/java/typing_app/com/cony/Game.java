@@ -28,6 +28,8 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 	private boolean isPress=false;
 	private boolean isOverlapped = false;
 	private Random rand = new Random();
+	private int typeTotal=0;
+	private int typeCorrect=0;
 
 	public void createColleagues() {
 		startButton = new ColleagueButton("start typing game");
@@ -104,7 +106,6 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 //			isOverlapped=true;
 //		}
 //		isPress=true;
-		
 	}
 	public void keyReleased(KeyEvent e) {
 //		isPress=false;
@@ -121,6 +122,7 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 		String enter = enterText.getText();
 		String exam = examText.getText();
 		if(e.getKeyCode() != e.VK_SHIFT) {
+			typeTotal++;
 			if(beforePressed != null) 
 				beforePressed.setBackground(Color.white);
 			JButton tmp;
@@ -134,6 +136,7 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 				beforePressed.setBackground(Color.CYAN);
 			}
 			if(enter.charAt(index) == exam.charAt(index)) {
+				typeCorrect++;
 				if(index < exam.length() - 1) {
 					index++;
 				}else {
@@ -156,6 +159,8 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 			isClear=false;
 			index=0;
 		}
+		if(typeTotal!=0)
+			System.out.println(typeCorrect + " / " + typeTotal + "(" + (typeCorrect * 100 / typeTotal ) + ") : correct / type (%)");
 	}
 
 }
