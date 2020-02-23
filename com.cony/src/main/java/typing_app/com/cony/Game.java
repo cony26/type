@@ -91,6 +91,7 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 			keyboard.controlColleague(isStart, Color.WHITE);
 			examText.controlColleague(isStart, Color.WHITE);
 			enterText.controlColleague(isStart,Color.WHITE);
+			enterText.requestFocusInWindow();
 		}else {
 			startButton.controlColleague(!isStart, Color.WHITE);
 			stopButton.controlColleague(isStart, Color.LIGHT_GRAY);
