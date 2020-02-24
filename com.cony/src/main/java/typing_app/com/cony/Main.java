@@ -10,7 +10,6 @@ public class Main {
 				System.exit(0);
 			}
 		});
-		System.out.println("main update conflict here");
-		System.out.println("conflict here");
+		System.out.println("yeah");
 	}
 }
