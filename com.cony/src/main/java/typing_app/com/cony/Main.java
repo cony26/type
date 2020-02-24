@@ -10,6 +10,10 @@ public class Main {
 				System.exit(0);
 			}
 		});
+<<<<<<< HEAD
 		System.out.println("main update conflict here");
+=======
+		System.out.println("conflict here");
+>>>>>>> refs/heads/create_conflict
 	}
 }
