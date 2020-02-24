@@ -10,8 +10,5 @@ public class Main {
 				System.exit(0);
 			}
 		});
-		System.out.println("Bsan");
-		System.out.println("A-san");
-		System.out.println("A-san");
 	}
 }
