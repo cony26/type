@@ -10,6 +10,10 @@ public class Main {
 				System.exit(0);
 			}
 		});
+<<<<<<< HEAD
 		System.out.println("Bsan");
+=======
+		System.out.println("A-san");
+>>>>>>> refs/heads/A-san
 	}
 }
