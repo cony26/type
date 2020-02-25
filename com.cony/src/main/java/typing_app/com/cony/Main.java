@@ -7,12 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 		(new Game("Typing Game")).addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				System.out.println("branch2 - 1");
 				System.exit(0);
 			}
 		});
-		System.out.println("yeah1");
-		System.out.println("yeah2");
-		System.out.println("after merge");
 	}
 }
