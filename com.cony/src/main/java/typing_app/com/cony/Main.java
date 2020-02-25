@@ -14,5 +14,6 @@ public class Main {
 		});
 		System.out.println("yeah1");
 		System.out.println("yeah2");
+		System.out.println("after merge");
 	}
 }
