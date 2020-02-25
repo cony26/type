@@ -12,5 +12,6 @@ public class Main {
 		});
 		System.out.println("good morning1");
 		System.out.println("good morning2");
+		System.out.println("hello");
 	}
 }
