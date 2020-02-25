@@ -8,6 +8,7 @@ public class Main {
 		(new Game("Typing Game")).addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				System.out.println("branch2 - 1");
+				System.out.println("branch2 - 2");
 				System.exit(0);
 			}
 		});
