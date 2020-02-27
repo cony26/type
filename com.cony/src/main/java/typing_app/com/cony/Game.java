@@ -30,6 +30,7 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 	private Random rand = new Random();
 	private int typeTotal=0;
 	private int typeCorrect=0;
+	private BattleDisplay bd;
 
 	public void createColleagues() {
 		startButton = new ColleagueButton("start typing game");
@@ -76,10 +77,12 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 		if(e.getSource() == startButton) {
 			isStart=true;
 			isClear=true;
+			bd = new BattleDisplay();
 			update();
 		}else if(e.getSource() == stopButton) {
 			isStart=false;
 			isClear=false;
+			bd.dispose();
 		}
 		colleagueChanged();
 	}
@@ -91,6 +94,7 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 			keyboard.controlColleague(isStart, Color.WHITE);
 			examText.controlColleague(isStart, Color.WHITE);
 			enterText.controlColleague(isStart,Color.WHITE);
+			this.toFront();
 			enterText.requestFocusInWindow();
 		}else {
 			startButton.controlColleague(!isStart, Color.WHITE);
