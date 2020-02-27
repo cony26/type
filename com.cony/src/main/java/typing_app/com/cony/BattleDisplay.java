@@ -10,21 +10,21 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 public class BattleDisplay extends JFrame{
-	private JTextField yourHP;
-	private JTextField enemyHP;
+	private JTextField yourHPtext;
+	private JTextField enemyHPtext;
 	private Canvas canvas;
 	
 	public BattleDisplay() {
 		//display canvas and HP
-		yourHP = new JTextField();
-		enemyHP = new JTextField();
+		yourHPtext = new JTextField();
+		enemyHPtext = new JTextField();
 		canvas = new Canvas();
 		canvas.setSize(300, 300);
 		canvas.setBackground(Color.BLACK);
 		Box mainBox = new Box(BoxLayout.Y_AXIS);
 		Box HPBox = new Box(BoxLayout.X_AXIS);
-		HPBox.add(yourHP);
-		HPBox.add(enemyHP);
+		HPBox.add(yourHPtext);
+		HPBox.add(enemyHPtext);
 		mainBox.add(HPBox);
 		mainBox.add(canvas);
 		
@@ -33,6 +33,13 @@ public class BattleDisplay extends JFrame{
 		pack();
 		show();
 		
+	}
+	
+	public void setYourHPtext(int yourHP) {
+		yourHPtext.setText(""+yourHP);
+	}
+	public void setEnemyHPtext(int enemyHP) {
+		enemyHPtext.setText(""+enemyHP);
 	}
 	
 }
