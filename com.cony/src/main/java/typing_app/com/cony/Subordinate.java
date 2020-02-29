@@ -9,4 +9,7 @@ public class Subordinate extends Enemy{
 		super(name);
 		setParameter(rand.nextInt(Properties.SUBORDINATE_MAX_HP),rand.nextInt(Properties.SUBORDINATE_MAX_AP));
 	}
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
 }

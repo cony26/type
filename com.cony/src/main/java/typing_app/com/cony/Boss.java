@@ -12,5 +12,8 @@ public class Boss extends Enemy{
 		super(name);
 		setParameter(rand.nextInt(Properties.BOSS_HP_MAX),rand.nextInt(Properties.BOSS_AP_MAX));
 	}
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
 
 }

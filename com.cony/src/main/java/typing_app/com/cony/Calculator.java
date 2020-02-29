@@ -2,19 +2,28 @@ package typing_app.com.cony;
 
 public class Calculator {
 	private Player player;
-	private Enemy enemy;
+	private EnemyGroup enemy;
 	
 	private BattleDisplay bd;
 	
-	public Calculator(BattleDisplay bd) {
+	public Calculator(BattleDisplay bd, Player player, EnemyGroup enemy) {
 		this.bd = bd;
+		this.player = player;
+		this.enemy = enemy;
 	}
 	
 	public void yourAttack() {
-		(new AttackVisitor(this)).visit((EnemyGroup)bd.getEnemy());
+		enemy.accept(new YourAttackVisitor(player));
+		update();
 	}
 	
 	public void enemyAttack() {
-		
+		enemy.accept(new EnemyAttackVisitor(player));
+		update();
+	}
+	
+	private void update() {
+		bd.setYourHPtext(player.getHP());
+		bd.setEnemyHPtext(enemy.getHP());
 	}
 }

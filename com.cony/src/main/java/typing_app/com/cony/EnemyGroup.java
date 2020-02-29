@@ -5,13 +5,13 @@ import java.util.Iterator;
 
 public class EnemyGroup extends Enemy{
 	private ArrayList<Enemy> member = new ArrayList<Enemy>();
-	
 	public EnemyGroup(String name) {
 		super(name);
 	}
 	
 	public void add(Enemy enemy) {
 		member.add(enemy);
+		enemy.registerParentGroup(this);
 	}
 	
 	@Override
@@ -32,5 +32,20 @@ public class EnemyGroup extends Enemy{
 			tmp_attackPoint += ite.next().getAttackPoint();
 		}
 		return tmp_attackPoint;
+	}
+	
+	@Override
+	public boolean isBossOnly(Boss boss) {
+		if(boss.getHP() == getHP())
+			return true;
+		else
+			return false;
+	}
+	
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
+	}
+	public Iterator<Enemy> getIterator(){
+		return member.iterator();
 	}
 }
