@@ -13,6 +13,7 @@ public class BattleDisplay extends JFrame{
 	private JTextField yourHPtext;
 	private JTextField enemyHPtext;
 	private Canvas canvas;
+	private Enemy enemy;
 	
 	public BattleDisplay() {
 		//display canvas and HP
@@ -40,6 +41,9 @@ public class BattleDisplay extends JFrame{
 	}
 	public void setEnemyHPtext(int enemyHP) {
 		enemyHPtext.setText(""+enemyHP);
+	}
+	public Enemy getEnemy() {
+		return enemy;
 	}
 	
 }

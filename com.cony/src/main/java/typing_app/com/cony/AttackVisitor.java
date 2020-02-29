@@ -1,16 +1,15 @@
 package typing_app.com.cony;
 
-public class attackVisitor extends Visitor{
-	private Calcurator calculator;
+public class AttackVisitor extends Visitor{
+	private Calculator calculator;
 	
-	public attackVisitor(Calculator calcurator) {
+	public AttackVisitor(Calculator calcurator) {
 		this.calculator = calcurator;
 	}
 
 	@Override
 	public void visit(Boss boss) {
 		boss.getAttackPoint();
-		calcurator
 	}
 
 	@Override

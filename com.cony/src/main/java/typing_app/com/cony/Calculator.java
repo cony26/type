@@ -1,6 +1,9 @@
 package typing_app.com.cony;
 
 public class Calculator {
+	private int yourHP;
+	private int enemyHP;
+	
 	private BattleDisplay bd;
 	
 	public Calculator(BattleDisplay bd) {
@@ -8,6 +11,7 @@ public class Calculator {
 	}
 	
 	public void yourAttack() {
+		(new AttackVisitor(this)).visit((EnemyGroup)bd.getEnemy());
 	}
 	
 	public void enemyAttack() {
