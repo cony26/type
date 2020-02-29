@@ -77,7 +77,7 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 		if(e.getSource() == startButton) {
 			isStart=true;
 			isClear=true;
-			bd = new BattleDisplay();
+			bd = new BattleDisplay(new BattleLauncher());
 			update();
 		}else if(e.getSource() == stopButton) {
 			isStart=false;
@@ -138,6 +138,7 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 					enterText.setText(enter.substring(0,index));
 				if(index == 0)
 					enterText.setText("");
+				bd.enemyAttack();
 			}
 			update();
 		}
@@ -149,9 +150,15 @@ public class Game extends JFrame implements Mediator,ActionListener,KeyListener{
 			enterText.setText("");
 			isClear=false;
 			index=0;
+			bd.yourAttack();
 		}
 		if(typeTotal!=0)
 			System.out.println(typeCorrect + " / " + typeTotal + "(" + (typeCorrect * 100 / typeTotal ) + ") : correct / type (%)");
+		if(bd.isBattleEnd()) {
+			enterText.setEnabled(false);
+		}
+		bd.canvasUpdate();
 	}
+	
 
 }

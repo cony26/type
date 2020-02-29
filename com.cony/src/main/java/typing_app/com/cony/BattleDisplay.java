@@ -2,6 +2,8 @@ package typing_app.com.cony;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionListener;
 
 import javax.swing.Box;
@@ -15,14 +17,22 @@ public class BattleDisplay extends JFrame{
 	private Canvas canvas;
 	private Enemy enemy;
 	private Player player;
+	private Calculator calculator;
 	
 	public BattleDisplay(Launcher launcher) {
 		//display canvas and HP
 		launcher.createPlayers();
+		player = launcher.getPlayer();
+		enemy = launcher.getEnemy();
+		calculator = new Calculator(this,player,enemy);
 		yourHPtext = new JTextField();
-		yourHPtext.setEnabled(false);
+		yourHPtext.setEditable(false);
+		yourHPtext.setFont(new Font(Font.DIALOG,Font.BOLD,16));
+		yourHPtext.setForeground(Color.blue);
 		enemyHPtext = new JTextField();
-		enemyHPtext.setEnabled(false);
+		enemyHPtext.setEditable(false);
+		enemyHPtext.setFont(new Font(Font.DIALOG,Font.BOLD,16));
+		enemyHPtext.setForeground(Color.RED);
 		canvas = new Canvas();
 		canvas.setSize(300, 300);
 		canvas.setBackground(Color.BLACK);
@@ -46,8 +56,20 @@ public class BattleDisplay extends JFrame{
 	public void setEnemyHPtext(int enemyHP) {
 		enemyHPtext.setText(""+enemyHP);
 	}
-	public Enemy getEnemy() {
-		return enemy;
+	public void yourAttack() {
+		calculator.yourAttack();
 	}
-	
+	public void enemyAttack() {
+		calculator.enemyAttack();
+	}
+	public boolean isBattleEnd() {
+		if(calculator.isBattleEnd() == 0) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+	public void canvasUpdate() {
+//		canvas.paint(g);
+	}
 }

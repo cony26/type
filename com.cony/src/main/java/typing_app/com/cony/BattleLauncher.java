@@ -1,12 +1,9 @@
 package typing_app.com.cony;
 
 public class BattleLauncher implements Launcher{
-	private Player player;
 	private Enemy enemy;
-	
-	public BattleLauncher(Player player,Enemy enemy) {
-		this.player = player;
-		this.enemy = enemy;
+	private Player player;
+	public BattleLauncher() {
 	}
 	
 	public void createPlayers() {
@@ -38,5 +35,12 @@ public class BattleLauncher implements Launcher{
 			System.out.println("wrong enemy created");
 			System.exit(0);
 		}
+	}
+	
+	public Player getPlayer() {
+		return player;
+	}
+	public Enemy getEnemy() {
+		return enemy;
 	}
 }

@@ -11,7 +11,7 @@ public class EnemyGroup extends Enemy{
 	
 	public void add(Enemy enemy) {
 		member.add(enemy);
-		enemy.registerParentGroup(this);
+		enemy.registerParent(this);
 	}
 	
 	@Override

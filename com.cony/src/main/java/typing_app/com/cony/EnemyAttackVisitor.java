@@ -15,7 +15,12 @@ public class EnemyAttackVisitor extends Visitor{
 	public void visit(Boss boss) {
 		// TODO Auto-generated method stub
 		if(rand.nextInt(100) < Properties.BOSS_ATTACK_PROB) {
-			player.setHP(player.getHP() - boss.getAttackPoint());
+			int tmp = player.getHP() - boss.getAttackPoint();
+			if(tmp > 0){
+				player.setHP(tmp);
+			}else {
+				player.setHP(0);
+			}
 		}
 	}
 
@@ -23,7 +28,12 @@ public class EnemyAttackVisitor extends Visitor{
 	public void visit(Subordinate subordinate) {
 		// TODO Auto-generated method stub
 		if(rand.nextInt(100) < Properties.SUBORDINATE_ATTACK_PROB) {
-			player.setHP(player.getHP() - subordinate.getAttackPoint());
+			int tmp = player.getHP() - subordinate.getAttackPoint();
+			if(tmp > 0){
+				player.setHP(tmp);
+			}else {
+				player.setHP(0);
+			}
 		}
 	}
 
