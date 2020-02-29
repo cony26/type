@@ -14,9 +14,11 @@ public class BattleDisplay extends JFrame{
 	private JTextField enemyHPtext;
 	private Canvas canvas;
 	private Enemy enemy;
+	private Player player;
 	
 	public BattleDisplay() {
 		//display canvas and HP
+		createPlayers();
 		yourHPtext = new JTextField();
 		enemyHPtext = new JTextField();
 		canvas = new Canvas();
@@ -34,6 +36,14 @@ public class BattleDisplay extends JFrame{
 		pack();
 		show();
 		
+	}
+	
+	public void createPlayers() {
+		//delegation to a class.
+		player = new Player();
+		player.setHP(Properties.PLAYER_DEFAULT_HP);
+		player.setAttackPoint(Properties.PLAYER_DEFAULT_AP);
+		enemy = new EnemyGroup("dark group");
 	}
 	
 	public void setYourHPtext(int yourHP) {

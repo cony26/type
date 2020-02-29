@@ -4,17 +4,17 @@ package typing_app.com.cony;
 //
 public abstract class Enemy {
 	private String name;
-	private int hp;
-	private int attackPoint;
+	private Player enemy;
 	
 	public Enemy() {
 	}
 	public Enemy(String name) {
 		this.name = name;
+		this.enemy = new Player();
 	}
 	
 	public int getHP() {
-		return hp;
+		return enemy.getHP();
 	}
 	
 	public String getName() {
@@ -22,7 +22,7 @@ public abstract class Enemy {
 	}
 	
 	public int getAttackPoint() {
-		return attackPoint;
+		return enemy.getAttackPoint();
 	}
 	
 	public void accept(Visitor visitor) {
@@ -30,7 +30,7 @@ public abstract class Enemy {
 	}
 		
 	protected void setParameter(int hp, int attackPoint) {
-		this.hp = hp;
-		this.attackPoint = attackPoint;
+		enemy.setHP(hp);
+		enemy.setAttackPoint(attackPoint);
 	}
 }

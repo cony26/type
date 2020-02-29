@@ -1,8 +1,8 @@
 package typing_app.com.cony;
 
 public class Calculator {
-	private int yourHP;
-	private int enemyHP;
+	private Player player;
+	private Enemy enemy;
 	
 	private BattleDisplay bd;
 	
