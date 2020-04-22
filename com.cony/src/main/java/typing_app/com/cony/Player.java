@@ -1,5 +1,5 @@
 package typing_app.com.cony;
-
+//mytest1
 public class Player {
 	private int hp = 0;
 	private int attackPoint = 0;
