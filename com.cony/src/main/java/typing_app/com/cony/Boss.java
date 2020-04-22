@@ -10,7 +10,7 @@ public class Boss extends Enemy{
 	}
 	public Boss(String name) {
 		super(name);
-		setParameter(rand.nextInt(Properties.BOSS_HP_MAX),rand.nextInt(Properties.BOSS_AP_MAX));
+		setParameter(1 + rand.nextInt(Properties.BOSS_HP_MAX),1 + rand.nextInt(Properties.BOSS_AP_MAX));
 	}
 	public void accept(Visitor visitor) {
 		visitor.visit(this);

@@ -29,13 +29,14 @@ public class BattleDisplay extends JFrame{
 		yourHPtext.setEditable(false);
 		yourHPtext.setFont(new Font(Font.DIALOG,Font.BOLD,16));
 		yourHPtext.setForeground(Color.blue);
+		yourHPtext.setText("" + player.getHP());
 		enemyHPtext = new JTextField();
 		enemyHPtext.setEditable(false);
 		enemyHPtext.setFont(new Font(Font.DIALOG,Font.BOLD,16));
 		enemyHPtext.setForeground(Color.RED);
-		canvas = new Canvas();
-		canvas.setSize(300, 300);
-		canvas.setBackground(Color.BLACK);
+		enemyHPtext.setText("" + enemy.getHP());
+		
+		canvas = new DrawCanvas(300,500, enemy);
 		Box mainBox = new Box(BoxLayout.Y_AXIS);
 		Box HPBox = new Box(BoxLayout.X_AXIS);
 		HPBox.add(yourHPtext);
@@ -58,9 +59,11 @@ public class BattleDisplay extends JFrame{
 	}
 	public void yourAttack() {
 		calculator.yourAttack();
+		canvasUpdate();
 	}
 	public void enemyAttack() {
 		calculator.enemyAttack();
+		canvasUpdate();
 	}
 	public boolean isBattleEnd() {
 		if(calculator.isBattleEnd() == 0) {
@@ -70,6 +73,7 @@ public class BattleDisplay extends JFrame{
 		}
 	}
 	public void canvasUpdate() {
-//		canvas.paint(g);
+		canvas.repaint();
+
 	}
 }

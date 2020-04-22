@@ -53,6 +53,6 @@ public abstract class Enemy {
 	public abstract void accept(Visitor visitor);
 	
 	public String toString() {
-		return name;
+		return name + "[HP:" + getHP() + ", AP:" + getAttackPoint() + "]";
 	}
 }

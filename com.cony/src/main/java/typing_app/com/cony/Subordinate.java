@@ -7,7 +7,7 @@ public class Subordinate extends Enemy{
 	
 	public Subordinate(String name) {
 		super(name);
-		setParameter(rand.nextInt(Properties.SUBORDINATE_MAX_HP),rand.nextInt(Properties.SUBORDINATE_MAX_AP));
+		setParameter(1 + rand.nextInt(Properties.SUBORDINATE_MAX_HP),1 + rand.nextInt(Properties.SUBORDINATE_MAX_AP));
 	}
 	public void accept(Visitor visitor) {
 		visitor.visit(this);
